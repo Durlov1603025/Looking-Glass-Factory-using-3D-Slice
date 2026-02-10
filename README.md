@@ -145,8 +145,6 @@ The `vtkLookingGlassSDKAdapter` class implements the following Bridge SDK functi
 - **CMake** 3.15+
 - **C++ Compiler** with C++11 support
   - Windows: Visual Studio 2019/2022
-  - macOS: Xcode
-  - Linux: GCC 7+
 - **VTK** 9.0+ (or build with 3D Slicer)
 - **Looking Glass Bridge** 2.6.0+ installed
 
