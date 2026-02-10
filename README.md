@@ -2,38 +2,33 @@
 
 ## 📋 Project Overview
 
-This project updates the **SlicerLookingGlass** 3D Slicer extension and its underlying **LookingGlassVTKModule** to support newer Looking Glass holographic displays using the **Bridge SDK 2.6.0** instead of the deprecated HoloPlay Core SDK.
+This project updates the **SlicerLookingGlass** 3D Slicer extension and its underlying **LookingGlassVTKModule** to support newer Looking Glass holographic displays using the **Bridge SDK** instead of the deprecated HoloPlay Core SDK.
 
 ### Goal
-Enable support for newer Looking Glass displays:
-- **27" Light Field Display** (5K resolution)
-- **86" Hololuminescent Display**
-
-While maintaining backward compatibility with existing displays (8K, 4K, Portrait).
+Enable support for newer Looking Glass displays.
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
-RA/
+/
 ├── LookingGlassVTKModule/          # VTK rendering module (main SDK integration)
 │   ├── bridge_sdk/                 # Bridge SDK 2.6.0 header files
 │   │   ├── bridge.h                # Main SDK API
 │   │   ├── callbacks.h             # Callback definitions
 │   │   └── PixelFormats.h          # Pixel format enums
-│   ├── vtkLookingGlassSDKAdapter.h/.cxx    # NEW: Bridge SDK adapter class
-│   ├── vtkLookingGlassInterface.h/.cxx     # Device interface (updated for 86")
+│   ├── vtkLookingGlassSDKAdapter.h/.cxx    # Bridge SDK adapter class
+│   ├── vtkLookingGlassInterface.h/.cxx     # Device interface
 │   ├── vtkLookingGlassPass.h/.cxx          # Render pass
 │   ├── CMakeLists.txt              # Updated for Bridge SDK
-│   ├── FindBridgeSDK.cmake         # NEW: CMake module to find Bridge SDK
+│   ├── FindBridgeSDK.cmake         # CMake module to find Bridge SDK
 │   └── ...
 ├── SlicerLookingGlass/             # 3D Slicer extension wrapper
 │   ├── LookingGlass/               # Extension source code
 │   ├── CMakeLists.txt              # Updated for VTK 9+
 │   ├── FetchVTKRenderingLookingGlass.cmake # Configurable VTK module version
 │   └── ...
-└── Documentation files (*.md)
 ```
 
 ---
@@ -42,7 +37,6 @@ RA/
 
 ### 1. Bridge SDK Integration (LookingGlassVTKModule)
 
-#### New Files Created:
 
 **`vtkLookingGlassSDKAdapter.h/.cxx`** - Bridge SDK wrapper class
 - Provides unified C++ interface to Bridge SDK 2.6.0
@@ -78,15 +72,13 @@ adapter.Shutdown();
 - `callbacks.h` - Event callbacks
 - `PixelFormats.h` - Pixel format definitions
 
-#### Modified Files:
-
 **`CMakeLists.txt`**
 - Removed HoloPlay Core SDK dependency
 - Added Bridge SDK as required dependency
 - Added `vtkLookingGlassSDKAdapter` to build
 
 **`vtkLookingGlassInterface.cxx`**
-- Added device settings for **86" Hololuminescent Display**
+- Added device settings.
 
 ### 2. Build System Updates (SlicerLookingGlass)
 
@@ -199,13 +191,6 @@ The `FindBridgeSDK.cmake` searches these locations:
 - Environment variable: `BRIDGE_SDK_ROOT`
 - Local: `LookingGlassVTKModule/bridge_sdk/`
 
-**macOS:**
-- `/Applications/Looking Glass Bridge.app/Contents/`
-
-**Linux:**
-- `/usr/local/include/bridge/`
-- `/opt/lookingglass/bridge/`
-
 ---
 
 ## ⏳ Pending Tasks
@@ -214,27 +199,6 @@ The `FindBridgeSDK.cmake` searches these locations:
 2. **Hardware Testing** - Test with actual Looking Glass displays
 3. **Integration Testing** - Test within 3D Slicer
 4. **Performance Optimization** - Optimize for high-resolution displays
-
----
-
-## 📊 Supported Displays
-
-| Display | Resolution | SDK | Status |
-|---------|------------|-----|--------|
-| Looking Glass 8K | 8192×8192 quilt | Bridge | ✅ Supported |
-| Looking Glass 4K | 4096×4096 quilt | Bridge | ✅ Supported |
-| Looking Glass Portrait | 3360×3360 quilt | Bridge | ✅ Supported |
-| Looking Glass 27" | 5120×2880 native | Bridge | 🔄 In Progress |
-| Looking Glass 86" | 8192×8192 quilt | Bridge | 🔄 In Progress |
-
----
-
-## 📚 Documentation
-
-- [`FIRST_WEEK_PROGRESS_REPORT.md`](FIRST_WEEK_PROGRESS_REPORT.md) - Detailed progress report
-- [`LookingGlassVTKModule/BUILD_INSTRUCTIONS.md`](LookingGlassVTKModule/BUILD_INSTRUCTIONS.md) - Build guide
-- [`LookingGlassVTKModule/BRIDGE_SDK_INTEGRATION.md`](LookingGlassVTKModule/BRIDGE_SDK_INTEGRATION.md) - SDK integration details
-- [`SlicerLookingGlass/UPDATES.md`](SlicerLookingGlass/UPDATES.md) - Extension updates
 
 ---
 
@@ -254,10 +218,3 @@ The `FindBridgeSDK.cmake` searches these locations:
 - **LookingGlassVTKModule**: BSD License
 
 ---
-
-## 👤 Author
-
-Research Assistant Project - Updating SlicerLookingGlass for newer Looking Glass displays
-
-**Project Start**: February 2026
-
