@@ -1,6 +1,6 @@
 # SlicerLookingGlass - Bridge SDK Integration Project
 
-## 📋 Project Overview
+## Project Overview
 
 This project updates the **SlicerLookingGlass** 3D Slicer extension and its underlying **LookingGlassVTKModule** to support newer Looking Glass holographic displays using the **Bridge SDK** instead of the deprecated HoloPlay Core SDK.
 
