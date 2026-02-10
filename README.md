@@ -43,7 +43,6 @@ Enable support for newer Looking Glass displays.
 - Handles SDK initialization/shutdown
 - Device enumeration and detection
 - Calibration data retrieval
-- Cross-platform support (Windows/macOS/Linux)
 
 ```cpp
 // Usage example
