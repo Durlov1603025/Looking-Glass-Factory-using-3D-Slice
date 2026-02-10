@@ -33,7 +33,7 @@ Enable support for newer Looking Glass displays.
 
 ---
 
-## ✅ Completed Work
+## Completed Work
 
 ### 1. Bridge SDK Integration (LookingGlassVTKModule)
 
@@ -92,7 +92,7 @@ adapter.Shutdown();
 
 ---
 
-## 🔧 Bridge SDK API Implementation
+## Bridge SDK API Implementation
 
 The `vtkLookingGlassSDKAdapter` class implements the following Bridge SDK functions:
 
@@ -139,7 +139,7 @@ The `vtkLookingGlassSDKAdapter` class implements the following Bridge SDK functi
 
 ---
 
-## 🛠️ Build Requirements
+## Build Requirements
 
 ### Software Requirements
 - **CMake** 3.15+
@@ -152,11 +152,11 @@ The `vtkLookingGlassSDKAdapter` class implements the following Bridge SDK functi
 
 ### 3D Slicer Build
 To build as part of 3D Slicer:
-- **3D Slicer** 5.2.0+ (tested with 5.2.0 and 5.6.2)
+- **3D Slicer** 5.2.0+ 
 
 ---
 
-## 📦 Build Instructions
+## Build Instructions
 
 ### Option 1: Build with 3D Slicer Extension
 
@@ -193,7 +193,7 @@ The `FindBridgeSDK.cmake` searches these locations:
 
 ---
 
-## ⏳ Pending Tasks
+## Pending Tasks
 
 1. **Build & Compilation Testing** - Verify the code compiles with actual VTK
 2. **Hardware Testing** - Test with actual Looking Glass displays
@@ -202,7 +202,7 @@ The `FindBridgeSDK.cmake` searches these locations:
 
 ---
 
-## 🔗 References
+## References
 
 - [3D Slicer](https://www.slicer.org/)
 - [Looking Glass Factory](https://lookingglassfactory.com/)
@@ -212,7 +212,7 @@ The `FindBridgeSDK.cmake` searches these locations:
 
 ---
 
-## 📝 License
+## License
 
 - **SlicerLookingGlass Extension**: Apache 2.0 License
 - **LookingGlassVTKModule**: BSD License
